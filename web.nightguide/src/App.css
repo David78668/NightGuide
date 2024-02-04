@@ -1,0 +1,160 @@
+label{
+  font-size: larger;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+input{
+  padding: 5px;
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+input:hover{
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+
+select{
+  padding: 5px;
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+select:hover{
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+
+button{
+  font-size: smaller;
+  font-weight: 600;
+  padding: 11px;
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: 200ms;
+}
+
+button:hover{
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+
+h1{
+  margin-top: 15px;
+  font-weight: 300;
+}
+
+h2{
+  font-weight: 300;
+}
+
+.MainDiv{
+  width: 100vw;
+  height: 95vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  color: white;
+}
+
+.InputDiv{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(42,42,42,0.3);
+  border: 1px solid rgba(0,0,0,0.3);;
+  border-radius: 50px;
+  padding: 30px 0px 50px 0px;
+}
+
+.GenderAndWeightDiv
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.GenderAndWeightDiv > div
+{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.DrinkAndAmountDivWrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+.DrinkAndAmountDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.DrinkAndAmountDiv > div
+{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.AddSelectedDrinksDiv{
+  padding-top: 30px;
+}
+
+.SeletcedDrinksW{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.SeletcedDrinksW > div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: larger;
+  font-weight: 100;
+}
+
+/* NAVBAR */
+#NavbarDiv{
+  max-width: 100vw;
+  max-height: 5vh;
+
+  display: flex;
+  align-items: center;
+
+  background-color:rgb(42, 42, 42);
+  color: white;
+  font-size: small;
+  padding-left: 20px;
+}
+
+#NavbarDiv > a{
+  text-decoration: none;
+  color: white;
+  max-height: 100%;
+}
+/* NAVBAR */
