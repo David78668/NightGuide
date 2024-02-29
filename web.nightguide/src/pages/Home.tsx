@@ -11,13 +11,14 @@ function Home() {
   const [currentAmount, setCurrentAmount] = useState<number>(1);
   const [selectedDrinks, setSelectedDrinks] = useState<SelectedDrink[]>([]);
   const [calculatorResult, setCalculatorResult] = useState<CalculatorResult>();
+  const [spent, setSpent] = useState<number>(0);
 
   interface Drink {
     id: number;
     name: string;
     volume: number;
     alcohol: number;
-    price?: number
+    price: number
     recipe?: string;
   }
 
@@ -75,7 +76,14 @@ function Home() {
             soberUpTime: soberDate,
             initialBAC: BAC,
         }
+        
+        let tempSpent: number = 0;
 
+        selectedDrinks.forEach((d) => (
+          tempSpent += d.Drink.price
+        ))
+
+        setSpent(tempSpent);
         setCalculatorResult(CalculatorResult)
     } else {
         alert("Please select at least one drink before calculating.");
@@ -180,6 +188,7 @@ function Home() {
             <div className='ResultW'>
               <p>You will be sober in <strong>{getSoberIn(calculatorResult.soberUpTime)}</strong> at <strong>{`${calculatorResult.soberUpTime.getHours()}:${String(calculatorResult.soberUpTime.getMinutes()).padStart(2, '0')}`}</strong></p>
               <p>Your initial BAC is <strong>{(Math.ceil(calculatorResult.initialBAC * 100) / 100)}</strong></p>
+              <p>You spent approximately <strong>{spent}czk</strong></p>
               <button style={{ backgroundColor: gender === 'man' ? '#2986cc' : '#f28cd9'}} className='CalculateBtn' onClick={() => saveCalculatorResult()}>Save the result</button>
             </div>
           : null}

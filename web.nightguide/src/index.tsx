@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddDrink from './pages/AddDrink';
 import Home from './pages/Home'
 import RecentCalculations from './pages/RecentCalculations';
+import ServicesNearYou from './pages/ServicesNearYou';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,9 +17,8 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/AddDrink" element={<AddDrink />} />
         <Route path='/Calculations' element={<RecentCalculations />} />
+        <Route path='/Services' element={<ServicesNearYou />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
-
-reportWebVitals();

@@ -15,18 +15,22 @@ namespace nightguide.Controllers
             _database = context;
         }
 
+        //GET DRINKS
+
         [HttpGet("GetDrinks")]
         public List<Drink> GetDrinks()
         {
             return _database.Drinks.ToList();
         }
 
+        //GET CALCULATIONS
+
         [HttpGet("GetCalculations")]
         public List<CalculationResponse> GetCalculations()
         {
             List<CalculationResponse> response = new List<CalculationResponse>();
 
-            foreach(CalculatorResult calculatorResult in _database.CalculatorResults.ToList())
+            foreach (CalculatorResult calculatorResult in _database.CalculatorResults.ToList())
             {
                 response.Add(new CalculationResponse()
                 {
@@ -37,6 +41,8 @@ namespace nightguide.Controllers
 
             return response;
         }
+
+        //ADD DRINK
 
         public class CalculationResponse
         {
@@ -51,22 +57,8 @@ namespace nightguide.Controllers
             _database.SaveChanges();
         }
 
-        [HttpPost("SaveCalculation")]
-        public void SaveCalculation(SaveCalculationRequest data)
-        {
-            CalculatorResult calculatorResult = data.CalculatorResult;
 
-            _database.CalculatorResults.Add(calculatorResult);
-            _database.SaveChanges();
-
-            foreach(RequestDrink requestDrink in data.Drinks)
-            {
-                DrinkInCalculatorResult drinkInCalculatorResult = new DrinkInCalculatorResult() { DrinkId = requestDrink.Drink.Id, Amount = requestDrink.Amount, CalculatorResultId = calculatorResult.Id};
-                _database.DrinksInCalculatorResult.Add(drinkInCalculatorResult);
-            }
-            _database.SaveChanges();
-        }
-
+        //SAVE CALCULATION
         public class SaveCalculationRequest
         {
             public CalculatorResult CalculatorResult { get; set; }
@@ -79,6 +71,29 @@ namespace nightguide.Controllers
             public int Amount { get; set; }
         }
 
+        [HttpPost("SaveCalculation")]
+        public void SaveCalculation(SaveCalculationRequest data)
+        {
+            CalculatorResult calculatorResult = data.CalculatorResult;
 
+            _database.CalculatorResults.Add(calculatorResult);
+            _database.SaveChanges();
+
+            foreach (RequestDrink requestDrink in data.Drinks)
+            {
+                DrinkInCalculatorResult drinkInCalculatorResult = new DrinkInCalculatorResult() { DrinkId = requestDrink.Drink.Id, Amount = requestDrink.Amount, CalculatorResultId = calculatorResult.Id };
+                _database.DrinksInCalculatorResult.Add(drinkInCalculatorResult);
+            }
+            _database.SaveChanges();
+        }
+
+        //SAVE SEARCH LOG
+
+        [HttpPost("SaveSearchLog")]
+        public void SaveSearchLog(SearchLog log)
+        {
+            _database.SearchLogs.Add(log);
+            _database.SaveChanges();
+        }
     }
 }
