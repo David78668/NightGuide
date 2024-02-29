@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nightguide.Models;
 
@@ -11,9 +12,11 @@ using nightguide.Models;
 namespace nightguide.Migrations
 {
     [DbContext(typeof(NightGuideDbContext))]
-    partial class NightGuideDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240218140110_db-changeV4")]
+    partial class dbchangeV4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,7 +83,7 @@ namespace nightguide.Migrations
                     b.ToTable("Drinks");
                 });
 
-            modelBuilder.Entity("nightguide.Models.DrinkInCalculatorResult", b =>
+            modelBuilder.Entity("nightguide.Models.SelectedDrink", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,7 +102,35 @@ namespace nightguide.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DrinksInCalculatorResult");
+                    b.HasIndex("CalculatorResultId");
+
+                    b.HasIndex("DrinkId");
+
+                    b.ToTable("SelectedDrinks");
+                });
+
+            modelBuilder.Entity("nightguide.Models.SelectedDrink", b =>
+                {
+                    b.HasOne("nightguide.Models.CalculatorResult", "CalculatorResult")
+                        .WithMany("SelectedDrinks")
+                        .HasForeignKey("CalculatorResultId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("nightguide.Models.Drink", "Drink")
+                        .WithMany()
+                        .HasForeignKey("DrinkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CalculatorResult");
+
+                    b.Navigation("Drink");
+                });
+
+            modelBuilder.Entity("nightguide.Models.CalculatorResult", b =>
+                {
+                    b.Navigation("SelectedDrinks");
                 });
 #pragma warning restore 612, 618
         }

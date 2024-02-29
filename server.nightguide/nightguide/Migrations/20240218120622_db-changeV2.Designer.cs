@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nightguide.Models;
 
@@ -11,9 +12,11 @@ using nightguide.Models;
 namespace nightguide.Migrations
 {
     [DbContext(typeof(NightGuideDbContext))]
-    partial class NightGuideDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240218120622_db-changeV2")]
+    partial class dbchangeV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,7 +102,33 @@ namespace nightguide.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DrinksInCalculatorResult");
+                    b.HasIndex("CalculatorResultId");
+
+                    b.HasIndex("DrinkId");
+
+                    b.ToTable("DrinksInCalculatorResults");
+                });
+
+            modelBuilder.Entity("nightguide.Models.DrinkInCalculatorResult", b =>
+                {
+                    b.HasOne("nightguide.Models.CalculatorResult", null)
+                        .WithMany("Drinks")
+                        .HasForeignKey("CalculatorResultId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("nightguide.Models.Drink", "Drink")
+                        .WithMany()
+                        .HasForeignKey("DrinkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Drink");
+                });
+
+            modelBuilder.Entity("nightguide.Models.CalculatorResult", b =>
+                {
+                    b.Navigation("Drinks");
                 });
 #pragma warning restore 612, 618
         }

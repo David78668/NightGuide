@@ -1,4 +1,6 @@
-﻿namespace nightguide.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace nightguide.Models
 {
     public class CalculatorResult
     {
@@ -6,7 +8,6 @@
         public DateTime CalculationTime { get; set; }
         public string Gender { get; set; }
         public int Weight { get; set; }
-        public List<Drink> Drinks { get; set; }
         public DateTime SoberUpTime { get; set; }
         public Double InitialBAC { get; set; }
     }

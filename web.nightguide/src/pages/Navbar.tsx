@@ -1,10 +1,16 @@
-import '../App.css';
+import "../styles/navbar.css"
 
 function Navbar() {
   return (
-    <div id='NavbarDiv'>
+    <div id='Main'>
         <a href='/'>
-          <h2>NightGuide</h2>
+          <strong>NightGuide</strong>
+        </a>
+        <a href='/AddDrink'>
+          AddDrink
+        </a>
+        <a href='/Calculations'>
+          Calculations
         </a>
     </div>
   );

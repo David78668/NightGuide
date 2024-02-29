@@ -1,0 +1,193 @@
+.HomeMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    align-self: center;
+    justify-self: center;
+
+    width: 45%;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-radius: 8px;
+    border: 2px solid #E2E2E2;
+    background-color: 	#eeeeee;
+}
+
+.Heading{
+    font-size: 35px;
+    margin: 5px 0px 0px 0px;
+}
+
+.Labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 140%;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.DrinkLbl
+{
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 432px;
+}
+
+.Inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100%;
+
+    padding-bottom: 40px;
+}
+
+.GenderButtonsW{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.GenderButtonsW > button{
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 20px;
+}
+
+.WeightInputW{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.WeightInputW > input{
+    width: 150px;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: whitesmoke;
+    font-size: 20px;
+}
+
+.WeightInputW > label{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.ContinueBtn{
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 20px;
+}
+
+.Drinkputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.SelectedDrinkW{
+    display: flex;
+    width: 100%;
+    flex-direction:  row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.SelectedDrinkW > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.SelectedDrinkW > div > select{
+    text-align: center;
+    width: 220px;
+    height: 45px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 20px;
+}
+
+.SelectedDrinkW > div > input{
+    width: 80px;
+    height: 45px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: whitesmoke;
+
+    font-size: 20px;
+}
+
+.SelectedDrinkW > div > button{
+    width: 190px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.SelectedDrinkP{
+    font-size: 20px;
+    margin: 8px 0px 0px 0px;
+}
+
+.CalculateBtn{
+    margin-top: 20px;
+    color: white;
+    width: 190px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 20px;
+}
+
+.ResultW{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.ResultW > p{
+    margin: 10px 0px 15px 0px;
+}

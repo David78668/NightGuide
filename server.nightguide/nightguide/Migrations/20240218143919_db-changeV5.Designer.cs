@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nightguide.Models;
 
@@ -11,9 +12,11 @@ using nightguide.Models;
 namespace nightguide.Migrations
 {
     [DbContext(typeof(NightGuideDbContext))]
-    partial class NightGuideDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240218143919_db-changeV5")]
+    partial class dbchangeV5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,7 +83,7 @@ namespace nightguide.Migrations
                     b.ToTable("Drinks");
                 });
 
-            modelBuilder.Entity("nightguide.Models.DrinkInCalculatorResult", b =>
+            modelBuilder.Entity("nightguide.Models.SelectedDrink", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -91,7 +94,7 @@ namespace nightguide.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int>("CalculatorResultId")
+                    b.Property<int?>("CalculatorResultId")
                         .HasColumnType("int");
 
                     b.Property<int>("DrinkId")
@@ -99,7 +102,21 @@ namespace nightguide.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DrinksInCalculatorResult");
+                    b.HasIndex("CalculatorResultId");
+
+                    b.ToTable("SelectedDrinks");
+                });
+
+            modelBuilder.Entity("nightguide.Models.SelectedDrink", b =>
+                {
+                    b.HasOne("nightguide.Models.CalculatorResult", null)
+                        .WithMany("SelectedDrinks")
+                        .HasForeignKey("CalculatorResultId");
+                });
+
+            modelBuilder.Entity("nightguide.Models.CalculatorResult", b =>
+                {
+                    b.Navigation("SelectedDrinks");
                 });
 #pragma warning restore 612, 618
         }

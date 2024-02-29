@@ -1,0 +1,15 @@
+#Main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 5vh;
+    padding: 0px 20px 0px 20px;
+
+    background-color: #2A2A2A;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}

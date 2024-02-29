@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hh7Wpvt55GGfSTKfiHrSQ75QApfXMSXU4FEq3Cphzz+3k18XtVzZKxKtOsrgKuvUr/GorLJIcrr8nV8DcA24bw==",
+  "dgSpecHash": "E6ht/tZlZSI1qCzZNv8TXidMYYZxRvFvNDfxYyDcvEQBbZZu6rWeJBU9Lh1GDHnU2dJ2MvdaRkD4M+vqI3WfMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\1dada\\Desktop\\nightguide\\server.nightguide\\nightguide\\nightguide.csproj",
+  "projectFilePath": "C:\\Users\\1dada\\Desktop\\nightguide\\Server.NightGuide\\nightguide\\nightguide.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1dada\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\1dada\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

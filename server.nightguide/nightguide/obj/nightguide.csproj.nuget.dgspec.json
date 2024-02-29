@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1dada\\Desktop\\nightguide\\server.nightguide\\nightguide\\nightguide.csproj": {}
+    "C:\\Users\\1dada\\Desktop\\nightguide\\Server.NightGuide\\nightguide\\nightguide.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1dada\\Desktop\\nightguide\\server.nightguide\\nightguide\\nightguide.csproj": {
+    "C:\\Users\\1dada\\Desktop\\nightguide\\Server.NightGuide\\nightguide\\nightguide.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1dada\\Desktop\\nightguide\\server.nightguide\\nightguide\\nightguide.csproj",
+        "projectUniqueName": "C:\\Users\\1dada\\Desktop\\nightguide\\Server.NightGuide\\nightguide\\nightguide.csproj",
         "projectName": "nightguide",
-        "projectPath": "C:\\Users\\1dada\\Desktop\\nightguide\\server.nightguide\\nightguide\\nightguide.csproj",
+        "projectPath": "C:\\Users\\1dada\\Desktop\\nightguide\\Server.NightGuide\\nightguide\\nightguide.csproj",
         "packagesPath": "C:\\Users\\1dada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1dada\\Desktop\\nightguide\\server.nightguide\\nightguide\\obj\\",
+        "outputPath": "C:\\Users\\1dada\\Desktop\\nightguide\\Server.NightGuide\\nightguide\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\1dada\\AppData\\Roaming\\NuGet\\NuGet.Config",

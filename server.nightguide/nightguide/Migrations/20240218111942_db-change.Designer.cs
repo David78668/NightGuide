@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nightguide.Models;
 
@@ -11,9 +12,11 @@ using nightguide.Models;
 namespace nightguide.Migrations
 {
     [DbContext(typeof(NightGuideDbContext))]
-    partial class NightGuideDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240218111942_db-change")]
+    partial class dbchange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,28 +81,6 @@ namespace nightguide.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Drinks");
-                });
-
-            modelBuilder.Entity("nightguide.Models.DrinkInCalculatorResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CalculatorResultId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DrinkId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DrinksInCalculatorResult");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,9 +9,11 @@ namespace nightguide.Models
     {
         public NightGuideDbContext(DbContextOptions<NightGuideDbContext> options) : base(options)
         {
+
         }
 
         public DbSet<Drink> Drinks { get; set; }
         public DbSet<CalculatorResult> CalculatorResults { get; set; }
+        public DbSet<DrinkInCalculatorResult> DrinksInCalculatorResult { get; set; }
     }
 }
