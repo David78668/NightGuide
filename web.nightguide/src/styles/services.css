@@ -19,54 +19,43 @@
 }
 
 .ServicesW > a > button{
-    max-width: 400px;
-    height: 50px;
+    max-width: 380px;
+    height: 45px;
     border-radius: 5px;
     padding: 10px 20px 10px 20px;
     border: 0px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 71, 171, 0.85);
+    transition: 0.5s;
 }
 
+.ServicesW > a > button:hover{
+    background-color: rgba(0, 71, 171, 1);
+}
+
+
 .ServicesW > a > button > strong{
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: underline;
 }
 
 .ServicesW > p {
-    font-size: 25px;
-}
-
-.help{
-    background: rgb(37,0,224);
-    background: linear-gradient(90deg, rgba(37,0,224,1) 0%, rgba(227,30,51,1) 100%);
-    color: white;
-}
-
-.help:hover{
-    background: rgb(227,30,51);
-    background: linear-gradient(90deg,rgba(227,30,51,1) 0%, rgba(37,0,224,1) 100%);
-}
-
-.taxi{
-    background-color: rgb(244, 177, 20);
-    color: white;
-}
-
-.taxi:hover{
-    background-color: #e2a519;
-}
-
-.bar{
-    background-color: #6350c5;
-    color: white;
-}
-
-.bar:hover{
-    background-color: #5847ae;
+    font-size: 23px;
 }
 
 #Heading{
     font-size: 40px;
     margin: 10px;
+}
+
+.ChartW{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 300px;
+    margin-top: 5px;
 }

@@ -42,6 +42,14 @@ namespace nightguide.Controllers
             return response;
         }
 
+        //GET SEARCH LOGS
+
+        [HttpGet("GetSearchLogs")]
+        public List<SearchLog> GetSearchLogs()
+        {
+            return _database.SearchLogs.ToList();>
+        }
+
         //ADD DRINK
 
         public class CalculationResponse

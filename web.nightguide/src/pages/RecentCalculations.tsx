@@ -47,7 +47,7 @@ function RecentCalculations()
         const minutes = calculationTime.getMinutes().toString().padStart(2, '0');
 
         return(
-            <p>Calculation {id} on {day}.{month}. at {hours}:{minutes}</p>
+            <p style={{textAlign: "center"}}>Calculation {id} on {day}.{month}. at {hours}:{minutes}</p>
         )
       }
 
