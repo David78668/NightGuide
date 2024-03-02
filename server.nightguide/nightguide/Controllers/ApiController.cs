@@ -47,7 +47,75 @@ namespace nightguide.Controllers
         [HttpGet("GetSearchLogs")]
         public List<SearchLog> GetSearchLogs()
         {
-            return _database.SearchLogs.ToList();>
+            return _database.SearchLogs.ToList();
+        }
+
+
+        //GET STATISTICS
+
+        [HttpGet("GetStatistics")]
+        public Statistic GetStatistics()
+        {
+            List<CalculatorResult> CalculatorResults = _database.CalculatorResults.ToList();
+            List<DrinkInCalculatorResult> DrinksInResults = _database.DrinksInCalculatorResult.ToList();
+            List<Drink> Drinks = _database.Drinks.ToList();
+
+            int totalWeight = 0;
+            int males = 0;
+            int females = 0;
+            double totalInitBAC = 0;
+            double totalSoberUp = 0;
+
+            foreach (CalculatorResult calc in CalculatorResults)
+            {
+                totalWeight += calc.Weight;
+                if(calc.Gender == "man")
+                {
+                    males++;
+                }
+                else
+                {
+                    females++;
+                }
+                totalInitBAC += calc.InitialBAC;
+                totalSoberUp += (calc.CalculationTime - calc.SoberUpTime).TotalMilliseconds;
+            }
+
+            var drinkGroupsById = DrinksInResults.GroupBy(d => d.DrinkId);
+            var mostPopularDrink = drinkGroupsById.Select(g => new { DrinkID = g.Key, Count = g.Count() }).OrderByDescending(d => d.Count).FirstOrDefault();
+            
+            string popDrink = Drinks.Where(d => d.Id == mostPopularDrink.DrinkID).FirstOrDefault().Name;
+
+            var totalSpendByDrink = drinkGroupsById.Select(g => new { DrinkID = g.Key, Count = g.Count()});
+
+            int totalSpend = 0;
+
+            foreach (var drink in totalSpendByDrink)
+            {
+                var drinkObj = Drinks.FirstOrDefault(d => d.Id == drink.DrinkID);
+                if (drinkObj != null)
+                {
+                    totalSpend += (drinkObj.Price.Value * drink.Count);
+                }
+            }
+
+
+            Statistic stats = new Statistic()
+            {
+                PopularDrink = popDrink,
+                AvgWeight = totalWeight / CalculatorResults.Count,
+                Males = males,
+                Females = females,
+                AvgInitBAC = totalInitBAC / CalculatorResults.Count,
+                AvgSoberUpTimeMS = totalSoberUp / CalculatorResults.Count,
+                AvgSpend = totalSpend / CalculatorResults.Count,
+
+            };
+
+            _database.Statistics.Add(stats);
+            _database.SaveChanges();
+
+            return stats;
         }
 
         //ADD DRINK

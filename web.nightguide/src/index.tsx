@@ -6,6 +6,7 @@ import AddDrink from './pages/AddDrink';
 import Home from './pages/Home'
 import RecentCalculations from './pages/RecentCalculations';
 import ServicesNearYou from './pages/ServicesNearYou';
+import Statistics from './pages/Statistics';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,6 +19,7 @@ root.render(
         <Route path="/AddDrink" element={<AddDrink />} />
         <Route path='/Calculations' element={<RecentCalculations />} />
         <Route path='/Services' element={<ServicesNearYou />} />
+        <Route path='/Statistics' element={<Statistics />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

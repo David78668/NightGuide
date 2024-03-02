@@ -16,5 +16,6 @@ namespace nightguide.Models
         public DbSet<CalculatorResult> CalculatorResults { get; set; }
         public DbSet<DrinkInCalculatorResult> DrinksInCalculatorResult { get; set; }
         public DbSet<SearchLog> SearchLogs { get; set; }
+        public DbSet<Statistic> Statistics { get; set; }
     }
 }

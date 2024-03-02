@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nightguide.Models;
 
@@ -11,9 +12,11 @@ using nightguide.Models;
 namespace nightguide.Migrations
 {
     [DbContext(typeof(NightGuideDbContext))]
-    partial class NightGuideDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240302152553_db-change-final-V3")]
+    partial class dbchangefinalV3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

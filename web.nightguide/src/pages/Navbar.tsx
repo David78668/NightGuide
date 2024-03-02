@@ -15,6 +15,9 @@ function Navbar() {
         <a href='/Services'>
            Services near you
         </a>
+        <a href='/Statistics'>
+          Statistics
+        </a>
         <a href='/AddDrink'>
           Add custom drink
         </a>
