@@ -47,7 +47,7 @@ function RecentCalculations()
         const minutes = calculationTime.getMinutes().toString().padStart(2, '0');
 
         return(
-            <p style={{textAlign: "center"}}>Calculation {id} on {day}.{month}. at {hours}:{minutes}</p>
+            <p style={{textAlign: "center"}}>Calculation on {day}.{month}. at {hours}:{minutes}</p>
         )
       }
 
@@ -118,7 +118,7 @@ function RecentCalculations()
             {selectedCalculation !== undefined ? 
               <div>
                 <div>
-                  <p className={selectedCalculation.calculatorResult.gender === 'man' ? 'man' : 'woman'}>
+                  <p id={selectedCalculation.calculatorResult.gender === 'man' ? 'man' : 'woman'}>
                     {selectedCalculation.calculatorResult.gender.toString().charAt(0).toUpperCase() + selectedCalculation.calculatorResult.gender.slice(1)} {selectedCalculation.calculatorResult.weight}kg
                   </p>
                   <p>{getSoberIn(new Date(selectedCalculation.calculatorResult.soberUpTime))}</p>

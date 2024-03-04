@@ -5,6 +5,18 @@
     width: 100%;
 }
 
+#man{
+    font-size: 28px;
+    font-weight: 600;
+    color: #2986cc;
+}
+
+#woman {
+    font-size: 28px;
+    font-weight: 600;
+    color: #f28cd9;
+}
+
 .RecentCalcW{
     display: flex;
     flex-direction: column;
@@ -28,33 +40,30 @@
 }
 
 .RecentCalcW > div > div > p{
-    margin: 10px;
+    margin: 8px;
+    font-size: 23px;
 }
 
 .RecentCalcW > div > div > ul{
     margin: 10px;
-}
-
-.man{
-    font-size: 25px;
-    font-weight: 500;
-    color: #2986cc;
-}
-
-.woman {
-    font-size: 25px;
-    font-weight: 500;
-    color: #f28cd9;
+    font-size: 22px;
 }
 
 .CalcSelect{
     text-align: center;
     width: 400px;
-    height: 35px;
+    height: 40px;
     border-radius: 5px;
     border: 0px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 18px;
+    font-size: 20px;
+    background-color: rgba(0, 71, 171, 0.85);
+    color: white;
+    transition: 0.5s;
+}
+
+.CalcSelect:hover{
+    background-color: rgba(0, 71, 171, 1);
 }
 
 .CalcHeading{

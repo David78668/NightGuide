@@ -71,12 +71,84 @@
     font-size: 20px;
 }
 
+.man{
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 20px;
+    background-color: #2986cc;
+    transition: 0.2s;
+    color: white;
+}
+
+.man:hover{
+    background-color: rgb(21, 114, 186);
+}
+
+.woman{
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 20px;
+    background-color: #f28cd9;
+    transition: 0.3s;
+    color: white;
+}
+
+.woman:hover{
+    background-color: rgb(222, 120, 193);
+}
+
+.manSml{
+    max-width: 300px;
+    padding: 0px 15px 0px 15px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 20px;
+    background-color: #2986cc;
+    transition: 0.2s;
+    color: white;
+}
+
+.manSml:hover{
+    background-color: rgb(21, 114, 186);
+}
+
+.womanSml{
+    max-width: 300px;
+    padding: 0px 15px 0px 15px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 20px;
+    background-color: #f28cd9;
+    transition: 0.3s;
+    color: white;
+}
+
+.womanSml:hover{
+    background-color: rgb(222, 120, 193);
+}
+
 .WeightInputW{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 50%;
+}
+
+#calcBtn{
+    margin: 20px 0px 20px 0px;
 }
 
 .WeightInputW > input{
@@ -93,17 +165,6 @@
 .WeightInputW > label{
     font-size: 20px;
     margin-left: 10px;
-}
-
-.ContinueBtn{
-    width: 100px;
-    height: 40px;
-    font-size: 18px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    margin-bottom: 20px;
 }
 
 .Drinkputs{
@@ -167,7 +228,7 @@
     margin: 8px 0px 0px 0px;
 }
 
-.CalculateBtn{
+#CalculateBtn{
     margin-top: 20px;
     color: white;
     width: 190px;

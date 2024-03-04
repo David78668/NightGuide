@@ -78,7 +78,7 @@ namespace nightguide.Controllers
                     females++;
                 }
                 totalInitBAC += calc.InitialBAC;
-                totalSoberUp += (calc.CalculationTime - calc.SoberUpTime).TotalMilliseconds;
+                totalSoberUp += (calc.SoberUpTime - calc.CalculationTime).TotalMilliseconds;
             }
 
             var drinkGroupsById = DrinksInResults.GroupBy(d => d.DrinkId);
@@ -112,8 +112,8 @@ namespace nightguide.Controllers
 
             };
 
-            _database.Statistics.Add(stats);
-            _database.SaveChanges();
+            //_database.Statistics.Add(stats);
+            //_database.SaveChanges();
 
             return stats;
         }

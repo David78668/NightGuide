@@ -146,10 +146,10 @@ function Home() {
           </div>
           <div className='Inputs'>
             <div className='GenderButtonsW'>
-              <button style={{ backgroundColor: gender === 'man' ? '#2986cc' : 'whitesmoke', color: gender === 'man' ? 'white' : 'black'}} onClick={() => setGender('man')}>
+              <button className={ gender === 'man' ? 'man' : ''} onClick={() => setGender('man')}>
                 Man
               </button>
-              <button style={{ backgroundColor: gender === 'woman' ? '#f28cd9' : 'whitesmoke', color: gender === 'woman' ? 'white' : 'black'}} onClick={() => setGender('woman')}>
+              <button className={gender === 'woman' ? 'woman' : ''} onClick={() => setGender('woman')}>
                 Woman
               </button>
             </div>
@@ -159,7 +159,7 @@ function Home() {
             </div>
           </div>
           {cont === false ?
-          <button style={{ backgroundColor: gender === 'man' ? '#2986cc' : '#f28cd9'}} className='ContinueBtn'  onClick={() => setCont(true)}>Continue</button>
+          <button className={gender === 'man' ? 'manSml' : 'womanSml'} onClick={() => setCont(true)}>Continue</button>
           : null}
           {cont === true ? 
           <div className='Drinkputs'>
@@ -175,7 +175,7 @@ function Home() {
                 <input type="number" onChange={(e) => (parseFloat(e.target.value) > 1 ? setCurrentAmount(parseFloat(e.target.value)) : setCurrentAmount(1))} value={currentAmount} placeholder='Amount'/>
               </div>
               <div>
-                <button style={{ backgroundColor: gender === 'man' ? '#2986cc' : '#f28cd9'}} onClick={() => handleSelectedDrinkAdd()} >Add selected drink</button>
+                <button className={gender === 'man' ? 'manSml' : 'womanSml'} onClick={() => handleSelectedDrinkAdd()} >Add selected drink</button>
               </div>
             </div>
             {selectedDrinks.map((selectedDrink: SelectedDrink) => (
@@ -183,13 +183,13 @@ function Home() {
                 {selectedDrink.Amount.toString()}x {selectedDrink.Drink.name} ({selectedDrink.Drink.volume} l)
               </p>
             ))}
-            <button style={{ backgroundColor: gender === 'man' ? '#2986cc' : '#f28cd9'}} className='CalculateBtn' onClick={() => handleCalculation()}>Calculate your BAC</button>
+            <button id="calcBtn" className={gender === 'man' ? 'manSml' : 'womanSml'} onClick={() => handleCalculation()}>Calculate your BAC</button>
             {calculatorResult !== undefined ? 
             <div className='ResultW'>
               <p>You will be sober in <strong>{getSoberIn(calculatorResult.soberUpTime)}</strong> at <strong>{`${calculatorResult.soberUpTime.getHours()}:${String(calculatorResult.soberUpTime.getMinutes()).padStart(2, '0')}`}</strong></p>
               <p>Your initial BAC is <strong>{(Math.ceil(calculatorResult.initialBAC * 100) / 100)}</strong></p>
               <p>You spent approximately <strong>{spent}czk</strong></p>
-              <button style={{ backgroundColor: gender === 'man' ? '#2986cc' : '#f28cd9'}} className='CalculateBtn' onClick={() => saveCalculatorResult()}>Save the result</button>
+              <button className={gender === 'man' ? 'manSml' : 'womanSml'} id='CalculateBtn' onClick={() => saveCalculatorResult()}>Save the result</button>
             </div>
           : null}
           </div>: null}
