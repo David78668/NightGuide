@@ -1,11 +1,11 @@
 # NightGuide
 Enhanced blood alcohol content calculator.
 ## Features
-- [Blood alcohol content calculator](#Blood-alcohol-content-calculator)
-- [Calculation history](#Calculation-history)
-- [Services near you](#Services-near-you)
-- [Adding custom drinks](#Adding-custom-drinks)
-- [Statistics](#Statistics)
+- [Blood alcohol content calculator](#blood-alcohol-content-calculator)
+- [Calculation history](#calculation-history)
+- [Services near you](#services-near-you)
+- [Adding custom drinks](#adding-custom-drinks)
+- [Statistics](#statistics)
 ### Blood alcohol content calculator
 > **_Note:_** The calculation result is the **maximal** BAC not taking in question drink time or other factors.
 
