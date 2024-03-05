@@ -1,24 +1,25 @@
-.ServicesMain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ServicesW{
+.DrinkMain{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+}
 
+.DrinkW{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 45%;
     margin-top: 50px;
+    padding-bottom: 15px;
     padding-top: 20px;
-    padding-bottom: 30px;
     border-radius: 8px;
     border: 2px solid #E2E2E2;
     background-color: 	#eeeeee;
 }
 
-.ServicesW > a > button{
+.DrinkW > button{
     max-width: 380px;
     height: 45px;
     border-radius: 5px;
@@ -29,35 +30,33 @@
     color: white;
     background-color: rgba(0, 71, 171, 0.85);
     transition: 0.5s;
+    margin: 30px 0px 20px 0px;
 }
 
-.ServicesW > a > button:hover{
+.DrinkW > button:hover{
     background-color: rgba(0, 71, 171, 1);
 }
 
-
-.ServicesW > a > button > strong{
-    font-weight: 600;
-    text-decoration: underline;
+.DrinkW > input {
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: whitesmoke;
+    font-size: 20px;
 }
 
-.ServicesW > p {
+.DrinkW > p {
     font-size: 23px;
+    width: 220px;
+    margin: 20px 35px 10px 0px;
 }
 
 #Heading{
     font-size: 40px;
+    width: 300px;
     margin: 10px;
-    width: 500px;
     text-align: center;
-}
-
-.ChartW{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 300px;
-    margin-top: 5px;
 }

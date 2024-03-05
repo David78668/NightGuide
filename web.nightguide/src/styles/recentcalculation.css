@@ -57,16 +57,14 @@
     border: 0px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-size: 20px;
-    background-color: rgba(0, 71, 171, 0.85);
-    color: white;
     transition: 0.5s;
 }
 
 .CalcSelect:hover{
-    background-color: rgba(0, 71, 171, 1);
+    background-color: rgba(215, 215, 215, 1);
 }
 
 .CalcHeading{
-    font-size: 35px;
+    font-size: 40px;
     margin: 5px 0px 25px 0px;
 }

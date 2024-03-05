@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/drink.css"
 import Navbar from "./Navbar";
 
 function AddDrink() {
@@ -27,6 +28,11 @@ function AddDrink() {
                 });
 
                 alert("Sucsessfully added your drink to the database !")
+
+                setName("")
+                setVolume(0)
+                setAlcohol(0)
+                setPrice(0)
             } 
             catch (error) {
                 console.error('Error fetching data:', error);
@@ -40,13 +46,20 @@ function AddDrink() {
     return(
         <div>
             <Navbar />
-            <div>
-                <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} value={name}></input>
-                <input type="number" placeholder="Volume (l)" onChange={(e) => setVolume(parseFloat(e.target.value))} value={volume}></input>
-                <input type="number" placeholder="Alcohol (%)" onChange={(e) => setAlcohol(parseFloat(e.target.value))} value={alcohol}></input>
-                <input type="number" placeholder="Price (czk)" onChange={(e) => setPrice(parseFloat(e.target.value))} value={price}></input>
-                <button onClick={() => handleAdd()} >Add to the database!</button>
-            </div>
+            <div className="DrinkMain">
+                <div className="DrinkW">
+                    <p id="Heading">Add a drink</p>
+                    <p>Drink name</p>
+                    <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} value={name}></input>
+                    <p>Volume of alcohol (l)</p>
+                    <input type="number" placeholder="Volume of alcohol" onChange={(e) => setVolume(parseFloat(e.target.value))} value={volume}></input>
+                    <p>Alcohol (%)</p>
+                    <input type="number" placeholder="Alcohol" onChange={(e) => setAlcohol(parseFloat(e.target.value))} value={alcohol}></input>
+                    <p>Price (czk)</p>
+                    <input type="number" placeholder="Price" onChange={(e) => setPrice(parseFloat(e.target.value))} value={price}></input>
+                    <button onClick={() => handleAdd()} >Add to the database!</button>
+                </div>
+            </div>     
         </div>
     );
 }
