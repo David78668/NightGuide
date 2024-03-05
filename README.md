@@ -30,7 +30,7 @@ Enhanced blood alcohol content calculator.
     - **Packages**: [React ChartJs](https://react-chartjs-2.js.org/)
 - **Backend**: [ASP.NET Api](https://dotnet.microsoft.com/en-us/apps/aspnet/apis)
 - **Database**: [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) using [SSMS](https://learn.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver16)
-**Database diagram**: 
+- **Database diagram**: 
 
 ![Picture of the database diagram](https://i.ibb.co/92jYhHY/image.png)
 
