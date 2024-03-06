@@ -15,6 +15,7 @@ namespace nightguide.Controllers
             _database = context;
         }
 
+        [NonAction]
         public Statistic CalculateStatistics()
         {
             List<CalculatorResult> CalculatorResults = _database.CalculatorResults.ToList();
@@ -118,7 +119,6 @@ namespace nightguide.Controllers
         public Statistic GetStatistics()
         {
             return CalculateStatistics();
-
         }
 
         //ADD DRINK
@@ -160,7 +160,13 @@ namespace nightguide.Controllers
 
             foreach (RequestDrink requestDrink in data.Drinks)
             {
-                DrinkInCalculatorResult drinkInCalculatorResult = new DrinkInCalculatorResult() { DrinkId = requestDrink.Drink.Id, Amount = requestDrink.Amount, CalculatorResultId = calculatorResult.Id };
+                DrinkInCalculatorResult drinkInCalculatorResult = new DrinkInCalculatorResult()
+                {
+                    DrinkId = requestDrink.Drink.Id,
+                    Amount = requestDrink.Amount,
+                    CalculatorResultId = calculatorResult.Id
+                };
+
                 _database.DrinksInCalculatorResult.Add(drinkInCalculatorResult);
             }
             _database.SaveChanges();

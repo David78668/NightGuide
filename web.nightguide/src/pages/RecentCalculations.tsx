@@ -55,6 +55,8 @@ function RecentCalculations()
   {
     if(soberDate > new Date())
     {
+      const timeZoneOffset = soberDate.getTimezoneOffset();
+      soberDate = new Date(soberDate.getTime() - timeZoneOffset * 60 * 1000);
       const difference = soberDate.getTime() - Date.now()
       return(<p>You will be sober in <strong>{Math.floor(difference / (1000 * 60 * 60))} hours {Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))} minutes</strong> at <strong>{`${new Date(soberDate).getHours()}:${String(new Date(soberDate).getMinutes()).padStart(2, '0')}`}</strong></p>)
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nightguide")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f0bb95c367b79ab741b7d1142f986aaf8bc9631")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f8a0008ab4bd91d8f03fa6446d1e76c7c5f9d1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("nightguide")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nightguide")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

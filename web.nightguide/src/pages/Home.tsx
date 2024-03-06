@@ -80,7 +80,7 @@ function Home() {
         let tempSpent: number = 0;
 
         selectedDrinks.forEach((d) => (
-          tempSpent += d.Drink.price
+          tempSpent += (d.Drink.price * d.Amount)
         ))
 
         setSpent(tempSpent);
